@@ -1,0 +1,11 @@
+name: Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    uses: arithmon/.github/.github/workflows/lint-reusable.yml@main
