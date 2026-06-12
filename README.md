@@ -6,8 +6,9 @@ continuously adjustable parameter.
 
 This repository is the program's charter and its list of open problems. The
 map of adjacent work lives in the [atlas](https://github.com/arithmon/atlas);
-the founding framework's proofs live in
-[gift-framework/core](https://github.com/gift-framework/core).
+the methodology standard (how surprising is a claimed exact relation?) lives
+in the [Sieve](https://github.com/arithmon/sieve); the founding framework's
+proofs live in [gift-framework/core](https://github.com/gift-framework/core).
 
 The structure below follows Lakatos: a research program is a hard core that
 does not move, a protective belt of implementations that can be revised or
