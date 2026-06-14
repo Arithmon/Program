@@ -16,6 +16,24 @@ falsified, and explicit rules for what counts as fair play.
 
 ---
 
+## Start here
+
+Read one thing: the **[hard core](#hard-core)** below, the whole claim in one
+sentence. Read three:
+
+1. the [hard core](#hard-core): the sentence that does not move;
+2. the [open problems](problems/) (indexed in [INDEX.md](INDEX.md)): what the
+   program is actually trying to settle, refuted routes included;
+3. the [confrontations scoreboard](CONFRONTATIONS.md): the dated predictions
+   that will make or break it.
+
+New to all of this? The plain-language door is the organization profile at
+[github.com/arithmon](https://github.com/arithmon). Whether any of it is more
+than coincidence is the [Sieve](https://github.com/arithmon/sieve)'s question.
+Want to contribute, or to attack the program? See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
 ## Hard core
 
 > The dimensionless constants of physics are arithmetic and topological
