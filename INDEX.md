@@ -19,7 +19,7 @@
 
 ## Epistemic (2)
 
-- [A shared standard for counting coincidences](problems/coincidence-methodology.md) · **active** · updated 2026-06-12
+- [A shared standard for counting coincidences](problems/coincidence-methodology.md) · **active** · updated 2026-06-14
 - [Independent human verification](problems/independent-verification.md) · **active** · updated 2026-06-11
 
 ## Experimental (1)

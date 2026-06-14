@@ -3,7 +3,7 @@ title: A shared standard for counting coincidences
 axis: epistemic
 status: active
 opened: 2026-06-12
-updated: 2026-06-12
+updated: 2026-06-14
 ---
 
 **Statement.** Build a framework-independent standard for the question: how
@@ -35,6 +35,10 @@ frozen and deposited (DOI
 [10.5281/zenodo.20666879](https://doi.org/10.5281/zenodo.20666879),
 2026-06-12, before any search ran); four null models implemented;
 calibration complete at scaffold budget (fakes condemned, historical
-verdicts reproduced). Next: deeper enumeration, the adversarial-alphabet
-envelope on real targets, robustness across grammars and complexity
-measures, then the methods paper.
+verdicts reproduced). The constructive side, the rebate that distinguishes a
+relation which is a theorem of a pre-specified structure from one found by
+search, now has a stated definition and a machine-checked formal layer in
+[arithmon/lean](https://github.com/arithmon/lean) (Lean 4: certified
+expression-space counts, the rebate arithmetic). Next: deeper enumeration,
+the adversarial-alphabet envelope on real targets, robustness across grammars
+and complexity measures, the per-relation audit, then the methods paper.
