@@ -65,4 +65,4 @@ not amount to a principle on its own.
 **Next step.** Continue mapping which classifications single out (15, 7, 1)
 and (21, 77) simultaneously; test whether distinguishedness propagates from
 the K3 lattice to the G2 level. Do not look for selection in the inverse-
-problem statistic — that channel is closed by the landscape sweep.
+problem statistic: that channel is closed by the landscape sweep.
