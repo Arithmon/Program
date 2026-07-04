@@ -3,7 +3,7 @@ title: The selection principle
 axis: selection
 status: active
 opened: 2026-06-11
-updated: 2026-06-18
+updated: 2026-07-04
 ---
 
 **Statement.** Why this geometry? Identify the principle that selects K7,
@@ -62,7 +62,52 @@ Standard Model." Q-A keeps the topological-distinguishedness channel
 open, in the K3-lattice direction the constraints already named; it does
 not amount to a principle on its own.
 
-**Next step.** Continue mapping which classifications single out (15, 7, 1)
-and (21, 77) simultaneously; test whether distinguishedness propagates from
-the K3 lattice to the G2 level. Do not look for selection in the inverse-
-problem statistic: that channel is closed by the landscape sweep.
+**What is now established (2026-07-04).** The next step announced above has
+been carried out, in both directions, and a third route has been audited.
+All three close.
+
+- *Lattice propagation (Q-A, settled negatively by mechanism).* The
+  distinguishedness of the lattice keeps growing: it is realized as the
+  invariant lattice of non-symplectic involutions on hyperkahler fourfolds
+  of K3^[2] type, and it is the unique named exception of the published
+  mirror-existence lemma for that setting. But none of it reaches b3 = 77,
+  for independent structural reasons that are now proved rather than
+  suspected: (i) b2 = 21 is equivalent to rank-one monodromy, so the S5
+  lattice symmetry is broken to a stabilizer before it can act on the
+  monodromy data; (ii) 77 counts components of the discriminant link and
+  lives in the link complement, a factor disjoint from the lattice data in
+  the Donaldson cohomology model (the factor 11 of 77 = 7 x 11 appears in
+  none of the lattice-derived invariants actually swept: S5 irreps and
+  their sums, products and powers, the Petersen graph counts, the full
+  root diagram); (iii) the only higher-hyperkahler type that can host the
+  lattice has zero odd cohomology, so there is nothing on that side to
+  match a link count against. Distinguished, yes; selecting, no.
+
+- *Diophantine route (audited, closed as a principle).* The published
+  system ((rank + Ngen) b2 = Ngen b3, b2 + b3 = S) is linear with nonzero
+  determinant, so a unique rational solution always exists; integrality is
+  a divisibility comb, not a filter. The solution factors as
+  (b2, b3) = k (Ngen, rank + Ngen) with k = S / (rank + 2 Ngen); at
+  (8, 3, 98) this reads (21, 77) = 7 x (3, 11). All selection power sits
+  in the single integer choice S = 98, which remains underived in the
+  source papers, and one of their screening premises (realizability
+  requires b2 >= 9) is contradicted by the literature census (27 of the 65
+  known compact G2 manifolds have b2 < 9, including Joyce's (0, 215)).
+  The authors of that route have themselves downgraded the claim to a
+  "unique candidate solution" (May 2026).
+
+**Residue.** The open problem now reduces to a single statement: derive
+b2 + b3 = 98 = dim K7 x dim G2 (equivalently k = 7) from a pre-registered
+principle. In the factored form (b2, b3) = dim K7 x (Ngen, rank + Ngen),
+the selection question dissolves into the standard physical inputs
+(7, 3, 8): dimension, generations, rank. Until 98 = 7 x 14 is derived,
+it is an observation, not a principle, and must not be used as one.
+
+**Next step.** Only the residue qualifies: a pre-registered derivation of
+b2 + b3 = dim K7 x dim G2. The inverse-problem channel, all presently
+specified lattice-to-b3 propagation mechanisms, and the Diophantine route
+are closed; the honest standing verdict is "a distinguished point in
+several classifications at once, with no selection principle behind it so
+far", now established channel by channel rather than assumed out of
+caution. A propagation mechanism nobody has specified yet would reopen
+Q-A; it would have to enter through the link complement, where 77 lives.

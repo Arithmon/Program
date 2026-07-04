@@ -11,7 +11,7 @@
 
 ## Selection (1)
 
-- [The selection principle](problems/selection-principle.md) · **active** · updated 2026-06-11
+- [The selection principle](problems/selection-principle.md) · **active** · updated 2026-07-04
 
 ## Formalization (1)
 
