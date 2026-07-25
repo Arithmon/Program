@@ -1,0 +1,103 @@
+# Place at: program/.github/workflows/cross-repo-consistency.yml
+#
+# Runs the overseer that no single-repo CI can be: it clones every Arithmon repo
+# and checks the invariants that only exist between them. Opens an issue when a
+# scheduled run fails, so drift surfaces without anyone having to remember.
+
+name: cross-repo consistency
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"        # Mondays, 06:00 UTC
+  workflow_dispatch:
+  push:
+    paths:
+      - "LEDGER.json"
+      - "scripts/arithmon-consistency-check.py"
+      - ".github/workflows/cross-repo-consistency.yml"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run cross-repo audit
+        id: audit
+        run: |
+          python3 scripts/arithmon-consistency-check.py \
+            --json findings.json | tee report.txt
+        continue-on-error: true
+
+      - name: Publish report to the run summary
+        if: always()
+        run: |
+          {
+            echo '## Arithmon cross-repo consistency'
+            echo
+            echo '```'
+            cat report.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: consistency-findings
+          path: |
+            report.txt
+            findings.json
+
+      - name: Open an issue on drift
+        if: steps.audit.outcome == 'failure' && github.event_name == 'schedule'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('report.txt', 'utf8').slice(0, 60000);
+            const title = 'Cross-repo drift detected';
+            const { data: open } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'consistency',
+            });
+            const body = [
+              'The scheduled cross-repo audit found at least one blocking inconsistency.',
+              '',
+              'Canonical numbers live in `LEDGER.json`. If the ledger is what changed,',
+              'update the claim surfaces. If a claim surface is right, fix the ledger.',
+              '',
+              '<details><summary>Full report</summary>',
+              '',
+              '```',
+              report,
+              '```',
+              '',
+              '</details>',
+            ].join('\n');
+            const existing = open.find(i => i.title === title);
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: existing.number, body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title, body, labels: ['consistency'],
+              });
+            }
+
+      - name: Fail the job if the audit failed
+        if: steps.audit.outcome == 'failure'
+        run: exit 1

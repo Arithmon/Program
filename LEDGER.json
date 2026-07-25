@@ -1,0 +1,84 @@
+{
+  "_comment": [
+    "Single source of truth for every number that appears in more than one Arithmon repo.",
+    "Change a headline number HERE FIRST, then propagate. arithmon-consistency-check.py",
+    "reads this file and fails CI on any claim surface that disagrees with it.",
+    "",
+    "certificate_conjuncts = 213: ARBITRATED 2026-07-25 by mechanical count against the",
+    "K7-Lean HEAD — top-level conjunctions of the 10 master certificates match the v3.5",
+    "S3 enumeration exactly (39+56+45+15+10+6+10+11+14+7 = 213; Certificate/{Foundations,",
+    "Predictions,Spectral}.statement + metric_eigenvalues/spectral_invariants/",
+    "compactification/tcs_gauge_breaking/gauge_bundle_data/associative_volumes/",
+    "computed_weyl_law certificates). The historical 140 was the three-pillar subtotal",
+    "39+56+45 (v3.4.29-era scope, before the 7 additional master certificates)."
+  ],
+
+  "framework_version": "3.5",
+  "lean_version": "3.5",
+
+  "counts": {
+    "type_I_relations": 33,
+    "type_II_relations": 19,
+    "type_III_relations": 21,
+    "type_IV_relations": 22,
+    "total_observables": 95,
+    "testable_observables": 66,
+    "axioms": 15,
+    "axioms_prediction_chain": 4,
+    "axioms_k3": 11,
+    "certificate_conjuncts": 213,
+    "sorry": 0
+  },
+
+  "frozen_predictions": {
+    "delta_CP_deg": 197,
+    "delta_CP_window_deg": [182, 212]
+  },
+
+  "external_citation": "Physics Letters B",
+  "external_citation_full": "Physics Letters B\\*{0,2}\\s*\\*{0,2}878\\*{0,2}\\s*\\(2026\\)\\s*140566",
+
+  "known_dois": {
+    "10.5281/zenodo.20666879": "Sieve, frozen inputs, pre-registration",
+    "10.5281/zenodo.20666878": "Sieve, companion deposit",
+    "10.5281/zenodo.16891489": "K7 Framework, concept DOI",
+    "10.5281/zenodo.18860358": "de La Fourniere 2026, Explicit G2 Holonomy Metric on a Compact TCS 7-Manifold K7 (cited in k7-lean sources + blueprint)",
+    "10.5281/zenodo.18920368": "de La Fourniere 2026, Spectral Geometry of a TCS G2 Manifold (cited in k7-lean sources)"
+  },
+
+  "root_modules": {
+    "k7-lean": "GIFT.lean"
+  },
+
+  "claim_surfaces": [
+    "README.md",
+    "profile/README.md",
+    "CITATION.md",
+    "CITATION.cff",
+    "STRUCTURE.md",
+    "INDEX.md",
+    "CONFRONTATIONS.md",
+    "docs/wiki/Home.md",
+    "docs/wiki/Home.fr.md",
+    "docs/GIFT_EXEC_SUMMARY.md",
+    "docs/GIFT_EXEC_SUMMARY.fr.md",
+    "docs/wiki/Citation-Guide.md",
+    "docs/wiki/Citation-Guide.fr.md",
+    "publications/papers/README.md",
+    "publications/validation/README.md"
+  ],
+
+  "experimental_markers": [
+    "nufit", "pdg", "best fit", "best-fit", "measured", "measurement",
+    "experimental", "t2k", "nova", "if dune", "would be refuted",
+    "is falsified", "falsifi", "hypothetical", "e.g."
+  ],
+
+  "require_citation_cff": [
+    ".github", "program", "atlas", "sieve", "lean", "k7", "k7-lean"
+  ],
+
+  "readme_must_cite_external": ["k7", "program", ".github"],
+
+  "old_org_prefixes": ["github.com/gift-framework/"]
+}
