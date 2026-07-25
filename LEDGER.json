@@ -61,7 +61,9 @@
     "docs/wiki/Citation-Guide.md",
     "docs/wiki/Citation-Guide.fr.md",
     "publications/papers/README.md",
-    "publications/validation/README.md"
+    "publications/validation/README.md",
+    "publications/outreach/the_constants_of_nature_are_counts.md",
+    "publications/outreach/k7_one_page.md"
   ],
   "experimental_markers": [
     "nufit",
