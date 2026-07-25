@@ -12,10 +12,8 @@
     "computed_weyl_law certificates). The historical 140 was the three-pillar subtotal",
     "39+56+45 (v3.4.29-era scope, before the 7 additional master certificates)."
   ],
-
   "framework_version": "3.5",
   "lean_version": "3.5",
-
   "counts": {
     "type_I_relations": 33,
     "type_II_relations": 19,
@@ -29,15 +27,15 @@
     "certificate_conjuncts": 213,
     "sorry": 0
   },
-
   "frozen_predictions": {
     "delta_CP_deg": 197,
-    "delta_CP_window_deg": [182, 212]
+    "delta_CP_window_deg": [
+      182,
+      212
+    ]
   },
-
   "external_citation": "Physics Letters B",
   "external_citation_full": "Physics Letters B\\*{0,2}\\s*\\*{0,2}878\\*{0,2}\\s*\\(2026\\)\\s*140566",
-
   "known_dois": {
     "10.5281/zenodo.20666879": "Sieve, frozen inputs, pre-registration",
     "10.5281/zenodo.20666878": "Sieve, companion deposit",
@@ -45,11 +43,9 @@
     "10.5281/zenodo.18860358": "de La Fourniere 2026, Explicit G2 Holonomy Metric on a Compact TCS 7-Manifold K7 (cited in k7-lean sources + blueprint)",
     "10.5281/zenodo.18920368": "de La Fourniere 2026, Spectral Geometry of a TCS G2 Manifold (cited in k7-lean sources)"
   },
-
   "root_modules": {
     "k7-lean": "GIFT.lean"
   },
-
   "claim_surfaces": [
     "README.md",
     "profile/README.md",
@@ -67,18 +63,43 @@
     "publications/papers/README.md",
     "publications/validation/README.md"
   ],
-
   "experimental_markers": [
-    "nufit", "pdg", "best fit", "best-fit", "measured", "measurement",
-    "experimental", "t2k", "nova", "if dune", "would be refuted",
-    "is falsified", "falsifi", "hypothetical", "e.g."
+    "nufit",
+    "pdg",
+    "best fit",
+    "best-fit",
+    "measured",
+    "measurement",
+    "experimental",
+    "t2k",
+    "nova",
+    "if dune",
+    "would be refuted",
+    "is falsified",
+    "falsifi",
+    "hypothetical",
+    "e.g."
   ],
-
   "require_citation_cff": [
-    ".github", "program", "atlas", "sieve", "lean", "k7", "k7-lean"
+    ".github",
+    "program",
+    "atlas",
+    "sieve",
+    "lean",
+    "k7",
+    "k7-lean"
   ],
-
-  "readme_must_cite_external": ["k7", "program", ".github"],
-
-  "old_org_prefixes": ["github.com/gift-framework/"]
+  "readme_must_cite_external": [
+    "k7",
+    "program",
+    ".github"
+  ],
+  "old_org_prefixes": [
+    "github.com/gift-framework/"
+  ],
+  "mean_deviation_type_I_pct": {
+    "frozen_preregistration_dataset": 0.73,
+    "reconciled_current_dataset": 0.99,
+    "_note": "BOTH are real, do not 'fix' one into the other: 0.73 = mean vs the dataset frozen at pre-registration (PDG 2024 + NuFIT 6.0), used in the v3.5 paper Type I tables; 0.99 = same mean after the post-freeze audit reconciling six exp values to primary sources (commit e403b86d, current observables.json). Definitions documented in v3.5 Supplement S4.5. Type II/III figures likewise differ between frozen tables (0.17/3.44) and the current dataset."
+  }
 }
