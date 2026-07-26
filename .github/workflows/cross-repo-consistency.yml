@@ -33,6 +33,11 @@ jobs:
 
       - name: Run cross-repo audit
         id: audit
+        # `shell: bash` is load-bearing: it runs with -o pipefail. The default
+        # shell does not, so `... | tee report.txt` reported tee's exit code and
+        # the audit could never fail the job. Run 30208588762 is the proof: six
+        # vocabulary errors, conclusion success.
+        shell: bash
         run: |
           python3 scripts/arithmon-consistency-check.py \
             --json findings.json | tee report.txt
