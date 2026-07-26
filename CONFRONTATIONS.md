@@ -35,4 +35,4 @@ Dated entries, appended as data arrives. Never edited, only appended.
 
 ---
 
-<sub>GIFT is the founding framework of the Arithmon program.</sub>
+<sub>K₇ (formerly GIFT) is the founding framework of the Arithmon program.</sub>

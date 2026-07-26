@@ -43,6 +43,29 @@
     "10.5281/zenodo.18860358": "de La Fourniere 2026, Explicit G2 Holonomy Metric on a Compact TCS 7-Manifold K7 (cited in k7-lean sources + blueprint)",
     "10.5281/zenodo.18920368": "de La Fourniere 2026, Spectral Geometry of a TCS G2 Manifold (cited in k7-lean sources)"
   },
+  "vocabulary": {
+    "_comment": "A rename is a dated entry here, and CI enforces it everywhere. Without this, a rename reaches the footers that a checker names and stops. Retire a PHRASE, never a bare word: GIFT is still the name of the theory and of the founding phase, so only these specific title and footer forms are retired. Historical paths (legacy, archive, CHANGELOG) are exempt by construction.",
+    "retired": [
+      {
+        "form": "GIFT is the founding framework",
+        "replacement": "K₇ (formerly GIFT) is the founding framework",
+        "since": "2026-07-17",
+        "why": "repos renamed to K7 and K7-Lean; GIFT kept as the name of the founding phase, not of the current framework"
+      },
+      {
+        "form": "GIFT: Geometric Information Field Theory",
+        "replacement": "K₇-Lean, the certified identities of the K₇ framework",
+        "since": "2026-07-17",
+        "why": "site title form; the expansion Geometric Information Field Theory stays legitimate in prose, the title does not"
+      },
+      {
+        "form": "# GIFT Core",
+        "replacement": "# K₇-Lean",
+        "since": "2026-07-17",
+        "why": "heading form; the repository is K7-Lean"
+      }
+    ]
+  },
   "root_modules": {
     "k7-lean": "GIFT.lean"
   },

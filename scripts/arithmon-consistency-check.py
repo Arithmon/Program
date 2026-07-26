@@ -542,6 +542,39 @@ def check_version_pins(paths, ledger, report):
                                      f"while the ledger is at {want}", [f"{rel}:{ln}"])
 
 
+def check_vocabulary(paths, ledger, report):
+    """Retired wording must not survive on a live surface.
+
+    A rename is a dated entry in LEDGER.vocabulary, which is what makes it
+    enforceable. Without this the sweep reaches whatever a checker happens to
+    name (four README footers) and stops, leaving the bodies behind. Phrases
+    are retired, never bare words: GIFT remains the name of the theory and of
+    the founding phase.
+    """
+    retired = ledger.get("vocabulary", {}).get("retired", [])
+    if not retired:
+        return
+    exts = {".md", ".html", ".yml", ".yaml", ".cff", ".txt"}
+    hits = 0
+    for repo, root in sorted(paths.items()):
+        for full, rel in walk_files(root, exts=exts, skip_historical=True):
+            text = read(full)
+            if not any(e["form"] in text for e in retired):
+                continue
+            for ln, line in enumerate(text.splitlines(), 1):
+                for e in retired:
+                    if e["form"] in line:
+                        hits += 1
+                        report.error(
+                            "vocabulary", repo,
+                            f"retired wording {e['form']!r} (retired {e['since']}); "
+                            f"use {e['replacement']!r}",
+                            [f"{rel}:{ln}"])
+    if not hits:
+        report.info("vocabulary", "-",
+                    f"no retired wording on live surfaces ({len(retired)} form(s) tracked)")
+
+
 def check_axiom_taxonomy(paths, ledger, report):
     """The 15 axioms must be described the same way everywhere, not just counted."""
     desc = re.compile(r"15\s+(?:Lean 4 |classified |stated |published )?axiom(?:s|es)?\s*[,(]\s*([^)|.]{5,90})",
@@ -684,6 +717,7 @@ def main():
         check_frozen_predictions(paths, ledger, report)
         check_count_drift(paths, ledger, report)
         check_version_pins(paths, ledger, report)
+        check_vocabulary(paths, ledger, report)
         check_axiom_taxonomy(paths, ledger, report)
         check_old_org_links(paths, ledger, report, network=not args.no_network)
         check_line_endings(paths, report)
