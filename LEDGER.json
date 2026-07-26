@@ -48,6 +48,7 @@
   },
   "claim_surfaces": [
     "README.md",
+    "arithmon-com.md",
     "profile/README.md",
     "CITATION.md",
     "CITATION.cff",

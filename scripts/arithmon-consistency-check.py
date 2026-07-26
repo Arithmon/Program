@@ -8,6 +8,10 @@ Per-repo CI cannot see drift that only exists *between* repos: a stale count in
 one README, a DOI cited nowhere else, a root module left a version behind.
 This script clones the org's repos and checks the invariants that span them.
 
+The deployed pages listed in SITES are fetched and flattened to text so that
+the same checks reach them. Without this, the program's most-read claim
+surface would be the only one nothing audits.
+
 Source of truth: program/LEDGER.json (see EMBEDDED_LEDGER for the schema).
 If that file is absent the embedded fallback is used and a warning is emitted.
 
@@ -23,6 +27,7 @@ Exit codes: 0 = clean (warnings allowed), 1 = at least one ERROR, 2 = harness fa
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import os
 import re
@@ -30,11 +35,19 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import urllib.request
 from collections import defaultdict
 from dataclasses import dataclass, field, asdict
 
 ORG = "arithmon"
 REPOS = [".github", "program", "atlas", "sieve", "lean", "k7", "k7-lean"]
+
+# The program's front door is uploaded, not committed, so cloning cannot reach
+# it. Each entry is fetched and flattened to text under a pseudo-repo, which
+# lets every claim check below apply to the served page unchanged. Skipped
+# under --no-network. The rendered filename is what LEDGER.claim_surfaces
+# must list for the page to count as a claim surface.
+SITES = {"site": ("https://arithmon.com/", "arithmon-com.md")}
 
 # Paths whose content is historical by design and must never trigger drift errors.
 HISTORICAL = re.compile(r"(^|/)(legacy|archive)/|CHANGELOG|/\.git/|/\.lake/|/build/")
@@ -74,7 +87,7 @@ EMBEDDED_LEDGER = {
     # Files where a number is a *headline claim* rather than a local subsection
     # count. Drift checks run here only: this is what keeps the report readable.
     "claim_surfaces": [
-        "README.md", "profile/README.md", "CITATION.md", "CITATION.cff",
+        "README.md", "arithmon-com.md", "profile/README.md", "CITATION.md", "CITATION.cff",
         "STRUCTURE.md", "INDEX.md", "CONFRONTATIONS.md",
         "docs/wiki/Home.md", "docs/wiki/Home.fr.md",
         "docs/GIFT_EXEC_SUMMARY.md", "docs/GIFT_EXEC_SUMMARY.fr.md",
@@ -148,6 +161,48 @@ def clone_all(workdir, quiet=True):
         paths[repo] = dest
         if not quiet:
             print(f"  cloned {repo}")
+    return paths
+
+
+BLOCK_TAGS = "p|div|li|tr|h[1-6]|section|article|dt|dd|blockquote|br"
+
+
+def render_page_text(src):
+    """Flatten a served HTML page to one line per block element.
+
+    Link targets are kept inline so that the link checks see them; everything
+    else becomes plain text, because the claim checks are line-based and a
+    number wrapped in markup would otherwise never match.
+    """
+    src = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", src)
+    src = re.sub(r'(?i)<a\b[^>]*href="([^"]+)"[^>]*>', r" \1 ", src)
+    src = re.sub(r"(?i)<(%s)\b[^>]*>" % BLOCK_TAGS, "\n", src)
+    src = re.sub(r"(?i)</(%s)>" % BLOCK_TAGS, "\n", src)
+    src = re.sub(r"<[^>]+>", " ", src)
+    src = html.unescape(src)
+    lines = (re.sub(r"[ \t ]+", " ", ln).strip() for ln in src.splitlines())
+    return "\n".join(ln for ln in lines if ln)
+
+
+def materialize_sites(workdir, quiet=True):
+    """Fetch each deployed page into a pseudo-repo. Returns {key: path}."""
+    paths = {}
+    for key, (url, fname) in SITES.items():
+        dest = os.path.join(workdir, key)
+        try:
+            req = urllib.request.Request(
+                url, headers={"User-Agent": "arithmon-consistency-check"})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                raw = r.read().decode("utf-8", errors="replace")
+        except Exception as exc:
+            print(f"  ! could not fetch {url}: {exc}", file=sys.stderr)
+            continue
+        os.makedirs(dest, exist_ok=True)
+        with open(os.path.join(dest, fname), "w", encoding="utf-8", newline="\n") as fh:
+            fh.write(render_page_text(raw))
+        paths[key] = dest
+        if not quiet:
+            print(f"  fetched {url}")
     return paths
 
 
@@ -594,15 +649,24 @@ def main():
     tmp = None
     try:
         if args.local:
-            paths = resolve_local(args.local)
+            workdir = args.local
+            paths = resolve_local(workdir)
             if not paths:
-                print(f"no clones found under {args.local}", file=sys.stderr)
+                print(f"no clones found under {workdir}", file=sys.stderr)
                 return 2
         else:
             tmp = tempfile.mkdtemp(prefix="arithmon-audit-")
+            workdir = tmp
             if not args.quiet:
                 print("cloning org repos...")
             paths = clone_all(tmp, quiet=args.quiet)
+
+        if args.no_network:
+            report.warn("coverage", "-",
+                        "deployed pages not audited (--no-network): "
+                        + ", ".join(url for url, _ in SITES.values()))
+        else:
+            paths.update(materialize_sites(workdir, quiet=args.quiet))
 
         missing = [r for r in REPOS if r not in paths]
         if missing:
