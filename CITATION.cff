@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "The Arithmon Program"
+message: >-
+  If you use or discuss this repository, please cite it as below.
+type: software
+authors:
+  - family-names: "de La Fournière"
+    given-names: "Brieuc"
+repository-code: "https://github.com/Arithmon/Program"
+abstract: >-
+  The charter, the open problems and the confrontations scoreboard of the Arithmon program: the hypothesis that the dimensionless constants of physics are counts.
+license: MIT
