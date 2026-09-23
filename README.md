@@ -90,6 +90,11 @@ itself progressive; it publishes the scoreboard and lets the reader judge.
 The scoreboard is [CONFRONTATIONS.md](CONFRONTATIONS.md): frozen predictions,
 dated, against scheduled experimental data.
 
+Outside citation so far: a numerical G₂ dataset from the founding framework is
+cited in Heyes, Hirst, Sá Earp & Silva, *Neural and numerical methods for
+G₂-structures on contact Calabi-Yau 7-manifolds*, *Physics Letters B* **878**
+(2026) 140566.
+
 ---
 
 <sub>K₇ (formerly GIFT) is the founding framework of the Arithmon program.
