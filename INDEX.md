@@ -6,7 +6,7 @@
 ## Geometry (3)
 
 - [From explicit near-solution to exact G2 metric](problems/exact-g2-metric.md) · **active** · updated 2026-06-11
-- [Global residual bound on all of K3](problems/global-k3-bound.md) · **open** · updated 2026-06-11
+- [From a certified atlas to a certified metric on K3](problems/global-k3-bound.md) · **active** · updated 2026-09-23
 - [Closed-form spectral data for the K7 metric](problems/closed-form-spectral-data.md) · **dormant** · updated 2026-06-11
 
 ## Selection (1)
