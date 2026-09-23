@@ -21,9 +21,9 @@
     "type_IV_relations": 22,
     "total_observables": 95,
     "testable_observables": 66,
-    "axioms": 15,
+    "axioms": 14,
     "axioms_prediction_chain": 4,
-    "axioms_k3": 11,
+    "axioms_k3": 10,
     "certificate_conjuncts": 213,
     "sorry": 0
   },

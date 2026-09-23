@@ -576,8 +576,12 @@ def check_vocabulary(paths, ledger, report):
 
 
 def check_axiom_taxonomy(paths, ledger, report):
-    """The 15 axioms must be described the same way everywhere, not just counted."""
-    desc = re.compile(r"15\s+(?:Lean 4 |classified |stated |published )?axiom(?:s|es)?\s*[,(]\s*([^)|.]{5,90})",
+    """The ledger's axioms must be described the same way everywhere, not just counted.
+
+    The count is read from the ledger (it was a literal 15 until 2026-09-23, which would
+    have silently stopped matching anything once the count moved)."""
+    n = int(ledger["counts"]["axioms"])
+    desc = re.compile(rf"{n}\s+(?:Lean 4 |classified |stated |published )?axiom(?:s|es)?\s*[,(]\s*([^)|.]{{5,90}})",
                       re.I)
     variants = defaultdict(list)
     for repo, root in paths.items():
@@ -593,7 +597,7 @@ def check_axiom_taxonomy(paths, ledger, report):
         families[fam] += locs
     if len(families) > 1:
         report.warn("axiom-taxonomy", "-",
-                    f"the 15 axioms are characterised in {len(families)} incompatible ways "
+                    f"the {n} axioms are characterised in {len(families)} incompatible ways "
                     f"({', '.join(sorted(families))}): the count agrees but the description "
                     f"of what the 4 non-K3 axioms *are* does not",
                     [f"{fam}: {locs[0]}" for fam, locs in sorted(families.items())])
