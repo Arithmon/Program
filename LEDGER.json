@@ -42,7 +42,8 @@
     "10.5281/zenodo.16891489": "K7 Framework, concept DOI",
     "10.5281/zenodo.22047469": "K3, certified analytic geometry on an explicit K3 surface (Arithmon/K3), concept DOI",
     "10.5281/zenodo.18860358": "de La Fourniere 2026, Explicit G2 Holonomy Metric on a Compact TCS 7-Manifold K7 (cited in k7-lean sources + blueprint)",
-    "10.5281/zenodo.18920368": "de La Fourniere 2026, Spectral Geometry of a TCS G2 Manifold (cited in k7-lean sources)"
+    "10.5281/zenodo.18920368": "de La Fourniere 2026, Spectral Geometry of a TCS G2 Manifold (cited in k7-lean sources)",
+    "10.5281/zenodo.21706145": "Preregistration Requires a Decision Rule (Arithmon/Sieve preprint), concept DOI"
   },
   "vocabulary": {
     "_comment": "A rename is a dated entry here, and CI enforces it everywhere. Without this, a rename reaches the footers that a checker names and stops. Retire a PHRASE, never a bare word: GIFT is still the name of the theory and of the founding phase, so only these specific title and footer forms are retired. Historical paths (legacy, archive, CHANGELOG) are exempt by construction.",
