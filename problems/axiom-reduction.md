@@ -10,7 +10,7 @@ updated: 2026-09-23
 prediction chain, 10 interval-arithmetic certificates for the K3 block)
 toward zero.
 
-**Why it matters.** "15 to N" is the program's cleanest public progress
+**Why it matters.** "14 to N" is the program's cleanest public progress
 metric: machine-checked, monotone, and impossible to spin. First step taken
 on 2026-09-08: the K3-block axiom `PSLQ_null_in_TCS_basis` was discharged
 in K7-Lean, bringing the count from 15 to 14.

@@ -30,9 +30,11 @@ two halves answer differently.
 - *Topological rarity (Q-A).* (b2, b3) = (21, 77) is reached by no twisted
   connected sum construction (exhaustive 3852-config no-go, CHNP b2_max
   about 18); it sits in a genuine gap of the realized G2 Betti census
-  (nearest realized (19, 65)); reached only via the
-  Joyce-Karigiannis / Donaldson K3-fibration route. So (21, 77) IS rare as
-  a G2 manifold. But rarity is representation-dependent: its CY3 shadow
+  (nearest realized (19, 65)); no construction of a compact G2 manifold
+  realizing it is currently known (correction, 2026-10-22: the
+  Joyce-Karigiannis route cited here until then does not realize the pair,
+  K7 erratum §9). So (21, 77) IS rare, possibly absent, among G2
+  manifolds. But rarity is representation-dependent: its CY3 shadow
   via the Kunneth decomposition CY3 x S^1, namely (h11, h21) = (21, 27),
   is realized by 668,607 distinct reflexive 4-polytopes in the
   Kreuzer-Skarke database. The G2 rarity argument does not transport to

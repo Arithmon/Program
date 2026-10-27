@@ -3,7 +3,7 @@ title: Independent human verification
 axis: epistemic
 status: active
 opened: 2026-06-11
-updated: 2026-09-23
+updated: 2026-10-27
 ---
 
 **Statement.** Get the framework's certified chain examined, reproduced or
@@ -16,12 +16,14 @@ results are only machine-verified and self-reported is epistemically
 incomplete.
 
 **Known constraints.** Current state: journal submissions from this line of
-work, including the founding framework paper, have so far been declined. A numerical G2 dataset from
+work, including the founding framework paper, have so far been declined. A workshop paper on failure-driven verification,
+with the explicit K3 surface as its case study, was accepted as a poster at
+MATH-AI 2026 (NeurIPS workshop, non-archival). A numerical G2 dataset from
 this line of work is cited in the peer-reviewed literature (Phys. Lett. B 878
 (2026) 140566). The
-author publishes solo and without institutional affiliation, which makes the
+Arithmon papers are published solo and without institutional affiliation, which makes the
 usual channels slower; this is a constraint of the territory, not an excuse.
 
-**Next step.** Carry the pending submission through assessment. Use the atlas as the
+**Next step.** Use the atlas as the
 first-contact instrument: every convergent entry is a potential reviewer who
 already cares about the adjacent question.

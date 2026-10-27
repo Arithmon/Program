@@ -3,7 +3,7 @@ title: A shared standard for counting coincidences
 axis: epistemic
 status: active
 opened: 2026-06-12
-updated: 2026-06-14
+updated: 2026-10-27
 ---
 
 **Statement.** Build a framework-independent standard for the question: how
@@ -23,7 +23,9 @@ even if the founding framework falls.
 **Known constraints.** The instrument must pass calibration before it is
 allowed to score anything we care about: deliberately constructed fake
 frameworks must be condemned, Eddington's 136-then-137 must fail with a
-penalty for the revision, the quantum Hall relation must pass. Searching
+penalty for the revision, the quantum Hall relation must pass, with the duty
+to report which components and policies separate them, including where the
+frozen rule surprises its own author, as it did. Searching
 expressions against measured values before the target list is frozen would
 invalidate the exercise, so the freeze must be deposited with a dated DOI
 first; a data update (new PDG edition, new global fit) is a new freeze
@@ -35,10 +37,15 @@ frozen and deposited (DOI
 [10.5281/zenodo.20666879](https://doi.org/10.5281/zenodo.20666879),
 2026-06-12, before any search ran); four null models implemented;
 calibration complete at scaffold budget (fakes condemned, historical
-verdicts reproduced). The constructive side, the rebate that distinguishes a
+verdicts reproduced); the decision rule itself frozen (v1.1) and the held-out
+fail wing run against it: four historical claims excluded, with the results,
+the erratum discipline and both readings of one ambiguous frozen sentence
+published in the companion preprint (*Preregistration Requires a Decision
+Rule*, v2.2, concept DOI
+[10.5281/zenodo.21706145](https://doi.org/10.5281/zenodo.21706145)). The constructive side, the rebate that distinguishes a
 relation which is a theorem of a pre-specified structure from one found by
 search, now has a stated definition and a machine-checked formal layer in
 [arithmon/lean](https://github.com/arithmon/lean) (Lean 4: certified
-expression-space counts, the rebate arithmetic). Next: deeper enumeration,
-the adversarial-alphabet envelope on real targets, robustness across grammars
-and complexity measures, the per-relation audit, then the methods paper.
+expression-space counts, the rebate arithmetic). Next: the positive wing under a fresh pre-registered freeze (v1.2), the Koide
+case, deeper enumeration, and the per-relation audit of the founding
+framework.

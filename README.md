@@ -46,7 +46,7 @@ One sentence. Everything else is negotiable; this is not.
 
 The implementations, revisable and falsifiable without touching the core:
 
-- **GIFT, the founding framework**: the manifold K7, the Betti pair (21, 77),
+- **K7 (formerly GIFT), the founding framework**: the manifold K7, the Betti pair (21, 77),
   the E8xE8-motivated exceptional architecture, the 33 exact relations, the
   assignment of formulas to observables.
 - The calibrated dynamical mechanisms (quarantined from the statistics).
