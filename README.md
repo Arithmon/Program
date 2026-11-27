@@ -95,6 +95,10 @@ cited in Heyes, Hirst, Sá Earp & Silva, *Neural and numerical methods for
 G₂-structures on contact Calabi-Yau 7-manifolds*, *Physics Letters B* **878**
 (2026) 140566.
 
+Workshop: *Failure-Driven Verification in Human-AI Mathematics: An Explicit K3 Case Study* was accepted as a poster at
+[MATH-AI: The 6th Workshop on Mathematical Reasoning and AI](https://neurips.cc/virtual/2026/loc/atlanta/workshop/137559),
+NeurIPS 2026, Atlanta, December 12, 2026 (non-archival).
+
 ---
 
 <sub>K₇ (formerly GIFT) is the founding framework of the Arithmon program.
