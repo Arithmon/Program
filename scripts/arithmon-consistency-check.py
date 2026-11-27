@@ -56,7 +56,7 @@ TEXT_EXT = {".md", ".cff", ".yml", ".yaml", ".toml", ".json", ".bib", ".txt", ".
 
 EMBEDDED_LEDGER = {
     "_comment": "Single source of truth for numbers that appear in more than one repo.",
-    "framework_version": "3.5",
+    "framework_version": "3.6",
     "counts": {
         "type_I_relations": 33,
         "type_II_relations": 19,
@@ -72,7 +72,6 @@ EMBEDDED_LEDGER = {
     },
     "frozen_predictions": {
         "delta_CP_deg": 197,
-        "delta_CP_window_deg": [182, 212],
     },
     "external_citation": "Physics Letters B",
     "external_citation_full": r"Physics Letters B\*{0,2}\s*\*{0,2}878\*{0,2}\s*\(2026\)\s*140566",
@@ -80,7 +79,7 @@ EMBEDDED_LEDGER = {
         "10.5281/zenodo.20666879": "Sieve (frozen inputs, pre-registration)",
         "10.5281/zenodo.16891489": "K7 Framework (concept DOI)",
     },
-    "lean_version": "3.5",
+    "lean_version": "3.6",
     "root_modules": {
         "k7-lean": "GIFT.lean",
     },

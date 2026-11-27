@@ -12,8 +12,8 @@
     "computed_weyl_law certificates). The historical 140 was the three-pillar subtotal",
     "39+56+45 (v3.4.29-era scope, before the 7 additional master certificates)."
   ],
-  "framework_version": "3.5",
-  "lean_version": "3.5",
+  "framework_version": "3.6",
+  "lean_version": "3.6",
   "counts": {
     "type_I_relations": 33,
     "type_II_relations": 19,
@@ -29,10 +29,7 @@
   },
   "frozen_predictions": {
     "delta_CP_deg": 197,
-    "delta_CP_window_deg": [
-      182,
-      212
-    ]
+    "_note": "Framework v3.6 (2026-11-27) has no operational window for delta_CP: the relation is rejected when a global fit of the reference series excludes 197 degrees at 3 sigma (main paper, section 11). The window [182, 212] of earlier versions is withdrawn and is no longer a ledger value."
   },
   "external_citation": "Physics Letters B",
   "external_citation_full": "Physics Letters B\\*{0,2}\\s*\\*{0,2}878\\*{0,2}\\s*\\(2026\\)\\s*140566",
@@ -40,6 +37,7 @@
     "10.5281/zenodo.20666879": "Sieve, frozen inputs, pre-registration",
     "10.5281/zenodo.20666878": "Sieve, companion deposit",
     "10.5281/zenodo.16891489": "K7 Framework, concept DOI",
+    "10.5281/zenodo.24584099": "K7 Framework v3.6, The K7 Dictionary (version DOI, 2026-11-27)",
     "10.5281/zenodo.22047469": "K3, certified analytic geometry on an explicit K3 surface (Arithmon/K3), concept DOI",
     "10.5281/zenodo.18860358": "de La Fourniere 2026, Explicit G2 Holonomy Metric on a Compact TCS 7-Manifold K7 (cited in k7-lean sources + blueprint)",
     "10.5281/zenodo.18920368": "de La Fourniere 2026, Spectral Geometry of a TCS G2 Manifold (cited in k7-lean sources)",
